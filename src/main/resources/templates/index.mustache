@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>grow</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <script type="text/javascript" src="/js/main.js"></script>
+</head>
+
+<style>
+    .my-cursor {
+        cursor: pointer;
+    }
+
+    .my-cursor:hover {
+        color: rgb(226, 226, 40);
+    }
+
+    .on-Clicked {
+        color: rgb(226, 226, 40);
+    }
+
+
+
+    /*고객센터 배너*/
+    .custmer {
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .custmer-bg {
+        background-image: url('/images/main-bn.jpg');
+        background-position: top 30% center;
+    }
+
+    .custmer-txt {
+        color: #fff;
+        padding: 100px 80px;
+    }
+
+    .btn-custmer {
+        border: 1px solid var(--white);
+        color: #fff;
+        width: 300px
+    }
+
+    /*검색 백그라운드*/
+    .search-wrap {
+        position: relative;
+        _top: -128px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        height: 350px;
+        overflow: hidden;
+    }
+
+    .search-bg {
+        background-image: url('/images/search-bg.jpg');
+        background-position: top 30% center;
+        height: 400px !important;
+    }
+
+    .search-bg-opcity,
+    .custmer-bg-opcity {
+        background: rgba(0, 0, 0, .5);
+        _padding: 143px 0;
+        position: relative;
+        height: 100%;
+    }
+
+
+    #search {
+        width: 1000px;
+        position: relative;
+        top: 200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    .badge {
+        _opacity: .5;
+    }
+
+    .scrap {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(44, 180, 87, .6);
+        _opacity: .5;
+        _border-radius: 50%;
+    }
+
+    .btn-scrap {
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: #fff;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .btn-scrap:hover {
+        background-color: var(--mint-color);
+        opacity: 1;
+        transition: all .3s ease-in-out;
+        border-radius: 50%;
+    }
+
+    .main-card:hover {
+        box-shadow: 0 6px 7px rgba(0, 0, 0, 0.13);
+    }
+
+    .info.row {
+        gap: 20px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card img {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .card:hover {
+        box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.14);
+        transition: all .3s ease-in-out;
+    }
+
+    select.tab {}
+</style>
+
+<!--헤더 시작-->
+<header id="header" class="container-fluid">
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand"><img src="/images/logo.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="collapsibleNavbar">
+
+                <ul class="navbar-nav d-flex justify-content-start">
+                    <li class="nav-item mx-3 fs-5">
+                        <a class="nav-link text-dark" href="/jobs/info">채용정보</a>
+                    </li>
+                    <li class="nav-item mx-3 fs-5">
+                        <a class="nav-link text-dark" href="/user/resume">이력서</a>
+                    </li>
+
+                    <li class="nav-item mx-3 fs-5">
+                        <a class="nav-link text-dark" href="/user/jobs/interest">관심기업</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav d-flex justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/loginForm">로그인</a>
+                    </li>
+                    <li class="nav-item mr-20 ml-10 bar">
+                        <a class="nav-link text-dark ml-10" href="/joinForm">회원가입</a>
+                    </li>
+                    <li class="nav-item company-service ">
+                        <a class="nav-link mint-color" href="/comphome">기업서비스</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--헤더 끝-->
+
+<div class="main">
+    <div class="search-wrap search-bg">
+        <div class="search-bg-opcity">
+            <form class="search-from d-flex" id="search">
+                <input class="form-control me-2" type="text" placeholder="Search">
+                <button class="btn btn-mint" type="button" style="width:100px">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="ml-80 mr-80 px-3 pt-80">
+        <!-- 가운데 탭-->
+        <div class="row px-2">
+            <div class="col-4">
+                <!--<button type="button" class="btn btn-mint w-100 ">지역별</button>-->
+                <select class="form-select tab btn-outline-mint" name="sidoName" id="sidoName">
+                    <option selected disabled>직역별</option>
+                    <option value="서울특별시">서울특별시</option>
+                    <option value="부산광역시">부산광역시</option>
+                    <option value="대구광역시">대구광역시</option>
+                    <option value="인천광역시">인천광역시</option>
+                    <option value="광주광역시">광주광역시</option>
+                    <option value="대전광역시">대전광역시</option>
+                    <option value="울산광역시">울산광역시</option>
+                    <option value="세종특별자치시">세종특별자치시</option>
+                    <option value="">경기도</option>
+                    <option value="경기도">강원도</option>
+                    <option value="충청북도">충청북도</option>
+                    <option value="충청남도">충청남도</option>
+                    <option value="전라북도">전라북도</option>
+                    <option value="전라남도">전라남도</option>
+                    <option value="경상북도">경상북도</option>
+                    <option value="경상남도">경상남도</option>
+                    <option value="제주특별자치도">제주특별자치도</option>
+                </select>
+                </td>
+            </div>
+            <div class="col-4">
+                <!--<button type="button" class="btn btn-outline-mint w-100">기술별</button>-->
+                <select class="form-select tab btn-outline-mint" name="" id="">
+                    <option selected disabled>기술별</option>
+                    <option value="자바">자바</option>
+                    <option value="자바">자바</option>
+                    <option value="자바">자바</option>
+
+                </select>
+            </div>
+            <div class="col-4">
+                <!--<button type="button" class="btn btn-outline-mint w-100">직무별</button>-->
+                <select class="form-select tab btn-outline-mint" name="" id="">
+                    <option selected disabled>직무별</option>
+                    <option value="개발">개발, 데이터</option>
+                    <option value="개발">개발, 데이터</option>
+                    <option value="개발">개발, 데이터</option>
+                </select>
+            </div>
+        </div>
+        <!--가운데 탭-->
+
+
+        <!-- 공고들 -->
+        <div class="info row pt-50 pb-50" id="job-notice-box">
+        </div>
+        <!-- 공고들 -->
+
+        <!--페이징-->
+        <ul class="pagination d-flex justify-content-center pb-50">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </div>
+
+    <!--고객센터-->
+    <div class="custmer custmer-bg">
+        <div class="custmer-bg-opcity">
+            <div class="custmer-txt">
+                <h2 class="fw-600 ft-42 mb-20">인재를 찾기
+                    위한 새로운 기회!</h2>
+                <p class="ft-22 mb-50">편한 채용 관리 시스템
+                    채용 수수료, 채용공고 업로드 완전 무료
+                    우수한 120만 IT 인재풀을 경험해 보세요.
+                </p>
+                <button type="button" class="btn btn-custmer ft-22">고객 서비스 바로가기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--푸터-->
+<footer id="footer">
+    <div class="ft-in pt-40 pb-40 pr-100 pl-100 ft-16">
+        <div class="d-flex">
+            <div class="f_logo">
+                <img src="/images/logo.png">
+            </div>
+            <div class="ft-info-w">
+                <ul class="ft-info d-flex">
+                    <li class="mr-20">(주)그로우</li>
+                    <li class="mr-20">대표 : 000 </li>
+                    <li class="mr-20">개인정보보호책임자 : 000 </li>
+                    <li class="mr-20">사업자등록번호 : 000-00-00000</li>
+                    <li class="mr-20">직업정보제공사업 신고번호 : 00000000000</li>
+                </ul>
+                <ul>
+                    <li>경기도 성남시 분당구 대왕판교로 660 유스페이스 1A동 405호</li>
+                    <li>©grow. All rights reserved.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--푸터 끝-->
+<script>
+    // function del(boardId){
+    //     $.ajax({
+    //         url: `/api/boards/${boardId}`,
+    //         type: "delete"
+    //     }).done((res)=>{
+    //         $(`#board-${boardId}`).remove();
+    //     }).fail((res)=>{
+    //         alert(res.responseJSON.msg);
+    //         location.reload(); // f5
+    //     });
+    // }
+
+    $.ajax({
+        url: "/api/job-notices",
+        type: "get"
+    }).done((res) => {
+        console.log("통신 성공");
+        console.log(res);
+
+        let jobList = res;
+
+        jobList.forEach((job)=>{
+            $("#job-notice-box").append(render(job));
+        });
+    }).fail((res) => {
+        //console.log(res);
+        alert(res.responseJSON.msg);
+    });
+
+    function render(job) {
+        return `<div class="card">
+            <a href="/jobs/"
+                onclick="window.open(this.href, '_blank', 'width=1920,height=1080,toolbars=no,scrollbars=no, resizable=no'); return false;">
+                <img class="card-img-top" src="/images/logo.png" alt="" srcset=""
+                    style="height: 5em; width: 180px; padding:5px; text-align: center;">
+                <div class="card-body">
+
+                    <div class="mb-2 ft-16">${job.companyName}</div>
+                    <div class="point-ft ft-22 fw-600 mb-10">${job.title}</div>
+                    <div class="skill-wrap">
+                        ${renderSkill(job.requiredSkill)}
+<!--                        <span class="badge bg-warning">JavaScript</span>-->
+<!--                        <span class="badge bg-primary">HTML/CSS</span>-->
+<!--                        <span class="badge bg-success">Webpack</span>-->
+                    </div>
+                    <!--career, address info-->
+                    <div class="d-flex">
+                        <div class="career">인턴</div>
+                        <div class="mr-5 ml-5">|</div>
+                        <div class="address">판교분당</div>
+                    </div>
+                    <!--career, address info-->
+
+                    <div class="d-flex justify-content-end">
+                        <!--공고 마감일-->
+                        <div class="d-day mr-10">D-10</div>
+                        <!--공고 마감일-->
+
+                        <!--공고 스크랩-->
+                        <button type="button" aria-label="북마크" class="btn-scrap">
+                            <div class="scrap">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.75 2.5a.25.25 0 0 0-.25.25v9.91l3.023-2.489a.75.75 0 0 1 .954 0l3.023 2.49V2.75a.25.25 0 0 0-.25-.25h-6.5zM3 2.75C3 1.784 3.784 1 4.75 1h6.5c.966 0 1.75.784 1.75 1.75v11.5a.75.75 0 0 1-1.227.579L8 11.722l-3.773 3.107A.75.75 0 0 1 3 14.25V2.75z"
+                                        fill="#eaecee"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <!--공고 스크랩-->
+                    </div>
+                </div>
+            </a>
+        </div>`;
+    }
+
+    function renderSkill(skils){
+        let result = "";
+
+        skils.forEach((value, index, array) => {
+            const skillName = value.name;
+            let colorClass = "bg-primary";
+            if(skillName.toLowerCase() === 'javascript'){
+                colorClass = "bg-warning";
+            }else if(skillName.toLowerCase() === 'webpack'){
+                colorClass = "bg-success";
+            }
+
+            result += `<span class="badge ${colorClass}">${value.name}</span>`;
+        })
+
+
+        return result;
+    }
+</script>
+</body>
+
+</html>

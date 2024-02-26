@@ -1,0 +1,3 @@
+insert into job_tb (title,content,career,edu,position,address,required_skill,dead_line,created_at,company_name) values ('웹케시 모집공고', '모집합니다.','인턴','대졸','프론트','부산','javascript,java,html/css','2024-03-31', '2024-02-26', '웹케시')
+    insert into job_tb (title,content,career,edu,position,address,required_skill,dead_line,created_at,company_name) values ('비즈플레이 모집공고', '모집합니다.','신입','대졸','백엔드','부산','java,spring,Webpack','2024-03-31', '2024-02-26', '비즈플레이')
+insert into job_tb (title,content,career,edu,position,address,required_skill,dead_line,created_at,company_name) values ('쿠콘 모집공고', '모집합니다.','시니어','대졸','DevOps','부산','docker','2024-03-31', '2024-02-26', '쿠콘')
