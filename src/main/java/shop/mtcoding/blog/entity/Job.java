@@ -20,7 +20,6 @@ public class Job {
     private String edu;
     private String position;
     private String address;
-    private String requiredSkill;
     private String companyName;
     private Date deadLine;
     private Date createdAt;
